@@ -12,7 +12,7 @@ const hiddenWord = (word) => {
     )
 }
 
-const Word = () => {
+const Solution = () => {
     let hint = "Your ideal mood when coding."
     return (
         <div>
@@ -22,4 +22,4 @@ const Word = () => {
     )
 }
 
-export default Word
+export default Solution

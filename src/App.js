@@ -2,13 +2,13 @@ import logo from './logo.svg';
 import './App.css';
 import Letters from './components/letters';
 import Score from './components/score';
-import Word from './components/word';
+import Solution from './components/solution';
 
 function App() {
   return (
     <div>
       <Score />
-      <Word />
+      <Solution />
       <Letters />
     </div>
   );
