@@ -1,19 +1,18 @@
 import React from 'react'
+import Letter from './letter'
 
-const getLetter = (i) => {
-    // 65 <= i <= 90, 65 - A, 90 - Z
-    let ch = String.fromCharCode(i); // String.fromCharCode(65, 66, 67); // returns "ABC"
-    return <span>{ch}</span>
-}
-
-const Letters = () => {
-    let chars = Array.from({ length: 26}, (_, index) => getLetter(index + 65))
+const Letters = (props) => {
+    //const lettersKeys = Object.keys(props.letters)
     return (
         <div>
-            <div>Available letters</div>
-            {chars}
+            <h5 key="h4">Available letters:</h5>
+            {Object.keys(props.letters)
+                .map((l,_index) => 
+                    <Letter id={l} key={l} onclick={props.useLetter} class={props.letters[l] ? "used" : "origin"} letter={l} isRevealed={true}/>
+                    )}
         </div>
     )
 }
+
 
 export default Letters

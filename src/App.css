@@ -36,3 +36,34 @@
     transform: rotate(360deg);
   }
 }
+
+span{
+  padding: 3px;
+  border: 1px solid black;
+}
+
+span.used{
+  text-decoration: line-through;
+  background-color: lightgray;
+  color: gray;
+}
+
+span.origin{
+  cursor: pointer;
+}
+
+#root {
+  padding: 10px;
+}
+
+#score.green{
+  background-color: lightgreen;
+}
+
+#score.yellow{
+  background-color: yellow;
+}
+
+#score.red{
+  background-color: lightcoral;
+}

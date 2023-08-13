@@ -1,23 +1,19 @@
-import { computeHeadingLevel } from '@testing-library/react'
 import React from 'react'
+import Letter from './letter'
 
 
-const hiddenWord = (word) => {
+const Solution = (props) => {
+    let hint = props.hint
+    let word = props.word
     let characters = word.split("")
-    let componentToReturn = characters.map((l, index) => <span id={index}>_ </span>)
+    let componentToReturn = characters
+    .map((l, _index) => <Letter id={_index} key={_index} onclick={console.log} letter= {l} isRevealed={props.letters[characters[_index]]}/>)    
+    //.map((l, _index) => <Letter id={_index} key={_index} onclick={console.log} letter={props.letters[characters[_index]] ? l : "_"}/>)
+        //<span id={_index} key={_index}>{props.letters[characters[_index]] ? l : "_"}</span>
     return (
         <div>
+            <h4>Hint: {hint}</h4>
             {componentToReturn}
-        </div>
-    )
-}
-
-const Solution = () => {
-    let hint = "Your ideal mood when coding."
-    return (
-        <div>
-        {hiddenWord("calm")}
-        <div>{hint}</div>
         </div>
     )
 }
